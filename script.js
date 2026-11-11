@@ -91,7 +91,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // TRACE Architecture Demo Modal Close
+  const traceModalOverlay = document.getElementById('trace-modal-overlay');
+  const traceCloseBtn = document.getElementById('trace-close-btn');
+  if (traceCloseBtn && traceModalOverlay) {
+    traceCloseBtn.addEventListener('click', () => {
+      traceModalOverlay.classList.remove('active');
+    });
+  }
+  if (traceModalOverlay) {
+    traceModalOverlay.addEventListener('click', (e) => {
+      if (e.target === traceModalOverlay) {
+        traceModalOverlay.classList.remove('active');
+      }
+    });
+  }
+
 });
+
+// Open TRACE Project Architecture Demo Modal
+function openTraceModal(e) {
+  if (e) e.preventDefault();
+  const traceModalOverlay = document.getElementById('trace-modal-overlay');
+  if (traceModalOverlay) {
+    traceModalOverlay.classList.add('active');
+  }
+}
 
 // 5. COPY CONTACT DETAILS
 function copyContactInfo() {
@@ -142,33 +167,37 @@ function handleFormSubmit(e) {
 const RESUME_KNOWLEDGE = {
   skills: `Usha's core technical toolkit includes:
 • <strong>Languages:</strong> Python, JavaScript (ES6+), SQL, HTML5, CSS3, C.
-• <strong>AI & Machine Learning:</strong> Gemini 2.5 Flash, Vertex AI, OpenAI APIs, Scikit-learn, Prompt Engineering, Streamlit, Cosine Similarity, TF-IDF.
-• <strong>Data Science:</strong> Pandas, NumPy, Data Preprocessing, Feature Engineering.
-• <strong>Web & Backend:</strong> React.js, Vite, Node.js, Express.js, Web Speech API, MySQL.
-• <strong>Core Fundamentals:</strong> DSA, DBMS, OOP, Operating Systems, Computer Networks.`,
+• <strong>AI, Machine Learning & Systems:</strong> Scikit-learn, Streamlit, Cosine Similarity, TF-IDF Vectorization, Gemini 2.5 Flash, Vertex AI, OpenAI APIs, Prompt Engineering.
+• <strong>Data Science & Verification:</strong> SQLite, Pytest, Evidence Parsing, OCR (Vision/PDF), Pandas, NumPy, Data Preprocessing, Feature Engineering.
+• <strong>Web & Backend:</strong> React.js, Vite, Node.js, Express.js, MySQL, RESTful APIs.
+• <strong>Core Fundamentals:</strong> DSA, DBMS, OOP, Operating Systems, Computer Networks, Linear Algebra & Probability.`,
 
   projects: `Usha has developed two major featured projects:
-1. <strong>Virtual Clinic – Autonomous Medical Voice Agent:</strong>
-   • Voice & text conversational healthcare assistant with autonomous appointment scheduling.
-   • Stack: Gemini 2.5 Flash, Vertex AI, OpenAI API, Web Speech API, React.js, Vite, Node.js, Express.js.
-   • GitHub: <a href="https://github.com/shutupzunaira/voice-ai-agent" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">shutupzunaira/voice-ai-agent</a>
+1. <strong>TRACE – Customer Data Deletion Audit System:</strong>
+   • Automated compliance and deletion verification system for distributed data evidence.
+   • Processed 94 evidence files into 2,929 normalized observations across 386 snapshot scopes in 0.52s (JSON, SQL, LOG, TXT, PDF, PNG/OCR).
+   • Evaluated 518 customer deletion requests across 3,117 audit steps with identity resolution and absence proofs.
+   • Stack: Python, SQLite, Pytest, Evidence Parsing, OCR, Git.
+   • GitHub: <a href="https://github.com/ushhhhhh" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">github.com/ushhhhhh</a>
 
 2. <strong>Movie Recommendation System:</strong>
    • Content-based recommendation engine using TF-IDF vectorization and Cosine Similarity on film metadata.
-   • Stack: Python, Scikit-learn, Pandas, NumPy, Streamlit.
-   • GitHub: <a href="https://github.com/ushhhhhh/movie" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">ushhhhhh/movie</a>`,
+   • Built an interactive Streamlit UI for real-time film search, ranking, and recommendations.
+   • Stack: Python, Pandas, NumPy, Scikit-learn, Streamlit.
+   • GitHub: <a href="https://github.com/ushhhhhh/movie" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">github.com/ushhhhhh/movie</a>`,
 
   education: `<strong>Education Details:</strong>
 • <strong>Degree:</strong> Bachelor of Engineering (B.E.) in Artificial Intelligence and Machine Learning
 • <strong>Institution:</strong> BMS Institute of Technology and Management, Bengaluru
 • <strong>Graduation:</strong> Expected in 2028
 • <strong>Academic CGPA:</strong> <strong>8.50 / 10.00</strong>
-• <strong>Key Coursework:</strong> Data Structures & Algorithms, Machine Learning, Artificial Intelligence, DBMS, Linear Algebra, Probability & Statistics.`,
+• <strong>Key Coursework:</strong> Data Structures and Algorithms, Machine Learning, Artificial Intelligence, Database Management Systems, Probability & Statistics, Linear Algebra.`,
 
-  certifications: `<strong>Industry Certifications:</strong>
-1. <strong>Workato Foundations Level 1</strong> – Workato Automation Institute (2025)
-2. <strong>Cyber Security & Applied Ethical Hacking</strong> – Infosys Springboard (2025)
-3. <strong>Programming in C</strong> – Infosys Springboard (2024)`,
+  certifications: `<strong>Internships & Certifications:</strong>
+1. <strong>Web Development Internship</strong> – InAmigos Foundation (10 Oct 2026 – 26 Oct 2026)
+2. <strong>Workato Foundations Level 1</strong> – Workato Automation Institute (2025)
+3. <strong>Cyber Security & Applied Ethical Hacking</strong> – Infosys Springboard (2025)
+4. <strong>Programming in C</strong> – Infosys Springboard (2024)`,
 
   contact: `<strong>Contact Usha Prakash:</strong>
 • <strong>Email:</strong> <a href="mailto:prakashusha291@gmail.com" style="color:var(--accent-cyan);">prakashusha291@gmail.com</a>
@@ -181,30 +210,34 @@ const RESUME_KNOWLEDGE = {
 function generateAiResponse(input) {
   const query = input.toLowerCase();
 
-  if (query.includes('skill') || query.includes('tech') || query.includes('language') || query.includes('python') || query.includes('react')) {
+  if (query.includes('skill') || query.includes('tech') || query.includes('language') || query.includes('python') || query.includes('sqlite') || query.includes('pytest') || query.includes('ocr')) {
     return RESUME_KNOWLEDGE.skills;
   }
-  if (query.includes('project') || query.includes('virtual clinic') || query.includes('movie') || query.includes('work') || query.includes('agent')) {
+  if (query.includes('trace') || query.includes('audit') || query.includes('deletion') || query.includes('evidence')) {
+    return RESUME_KNOWLEDGE.projects;
+  }
+  if (query.includes('project') || query.includes('movie') || query.includes('work') || query.includes('system')) {
     return RESUME_KNOWLEDGE.projects;
   }
   if (query.includes('education') || query.includes('college') || query.includes('bms') || query.includes('cgpa') || query.includes('degree') || query.includes('gpa')) {
     return RESUME_KNOWLEDGE.education;
   }
-  if (query.includes('certif') || query.includes('workato') || query.includes('infosys') || query.includes('course')) {
+  if (query.includes('certif') || query.includes('intern') || query.includes('inamigos') || query.includes('workato') || query.includes('infosys') || query.includes('course')) {
     return RESUME_KNOWLEDGE.certifications;
   }
-  if (query.includes('contact') || query.includes('email') || query.includes('phone') || query.includes('reach') || query.includes('hire') || query.includes('intern')) {
+  if (query.includes('contact') || query.includes('email') || query.includes('phone') || query.includes('reach') || query.includes('hire')) {
     return RESUME_KNOWLEDGE.contact;
   }
   if (query.includes('who') || query.includes('about') || query.includes('summary') || query.includes('intro')) {
-    return `<strong>Usha Prakash</strong> is an Artificial Intelligence & Machine Learning undergraduate at BMS Institute of Technology and Management (CGPA: 8.5/10). She specializes in building intelligent applications using Python, Scikit-learn, React, and LLMs such as Gemini and OpenAI APIs. She is passionate about solving real-world challenges through AI and software engineering.`;
+    return `<strong>Usha Prakash</strong> is an Artificial Intelligence & Machine Learning undergraduate at BMS Institute of Technology and Management (CGPA: 8.5/10). She specializes in building intelligent applications and high-performance verification systems using Python, Scikit-learn, React, Streamlit, and modern AI/LLMs. Her recent work includes the TRACE Customer Data Deletion Audit System and a Content-Based Movie Recommendation Engine.`;
   }
 
   return `I can help you with details about Usha Prakash! Try asking about:
-• <em>Technical skills & tools</em>
-• <em>Virtual Clinic or Movie Recommendation projects</em>
+• <em>Technical skills & tools (Python, SQLite, Pytest, Scikit-learn)</em>
+• <em>TRACE Customer Data Deletion Audit System</em>
+• <em>Movie Recommendation System</em>
+• <em>InAmigos Internship & Certifications</em>
 • <em>Education at BMSITM & CGPA</em>
-• <em>Industry Certifications</em>
 • <em>Contact info & internship inquiries</em>`;
 }
 

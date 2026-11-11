@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Usha Prakash | AI & Machine Learning Engineer | Portfolio & Profile</title>
-  <meta name="description" content="Personal Profile & Portfolio of Usha Prakash - Artificial Intelligence and Machine Learning undergraduate at BMSITM. Experienced in Python, Scikit-learn, React, and LLMs.">
-  <meta name="keywords" content="Usha Prakash, AI Engineer, Machine Learning, Portfolio, BMSITM, Python, React, Gemini API, Streamlit">
+  <meta name="description" content="Personal Profile & Portfolio of Usha Prakash - Artificial Intelligence and Machine Learning undergraduate at BMSITM. Experienced in Python, Scikit-learn, TRACE Audit System, React, and LLMs.">
+  <meta name="keywords" content="Usha Prakash, AI Engineer, Machine Learning, TRACE, Data Deletion Audit, Portfolio, BMSITM, Python, React, Gemini API, Streamlit">
   <meta name="author" content="Usha Prakash">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="Usha Prakash | AI & ML Profile Website">
-  <meta property="og:description" content="Personal Profile Website of Usha Prakash - AI & ML undergraduate skilled in Python, React, LLMs, and Data Science.">
+  <meta property="og:description" content="Personal Profile Website of Usha Prakash - AI & ML undergraduate skilled in Python, Scikit-learn, TRACE Audit System, and Recommender Systems.">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts & Font Awesome Icons -->
@@ -1912,6 +1912,92 @@ button, input, textarea {
   }
 }
 
+
+/* TRACE Architecture & Live Demo Modal Styles */
+.trace-modal {
+  width: 100%;
+  max-width: 720px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transform: scale(0.95);
+  transition: transform var(--transition-normal);
+  border: 1px solid var(--border-color);
+}
+
+.ai-modal-overlay.active .trace-modal {
+  transform: scale(1);
+}
+
+.trace-modal-body {
+  padding: 1.5rem 1.75rem;
+  overflow-y: auto;
+  line-height: 1.65;
+}
+
+.arch-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 1.25rem 0;
+}
+
+.arch-step-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  align-items: flex-start;
+}
+
+.arch-step-num {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.arch-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.arch-metric-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.arch-metric-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent-emerald);
+}
+
+.arch-metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 </style>
 </head>
 <body>
@@ -1935,7 +2021,7 @@ button, input, textarea {
           <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
           <li><a href="#projects" class="nav-link"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
           <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-          <li><a href="#certifications" class="nav-link"><i class="fa-solid fa-certificate"></i> Certifications</a></li>
+          <li><a href="#certifications" class="nav-link"><i class="fa-solid fa-certificate"></i> Experience & Certs</a></li>
           <li><a href="#contact" class="nav-link"><i class="fa-regular fa-envelope"></i> Contact</a></li>
         </ul>
       </nav>
@@ -1982,7 +2068,7 @@ button, input, textarea {
             <span class="divider">•</span>
             <span><i class="fa-solid fa-graduation-cap"></i> BMSITM (CGPA: 8.5/10)</span>
             <span class="divider">•</span>
-            <span><i class="fa-solid fa-robot"></i> LLMs & Full Stack</span>
+            <span><i class="fa-brands fa-python"></i> Python, ML & Systems</span>
           </div>
 
           <div class="hero-buttons">
@@ -2004,12 +2090,12 @@ button, input, textarea {
               <div class="stat-label">B.E. AIML CGPA</div>
             </div>
             <div class="stat-card">
-              <div class="stat-num">2+</div>
-              <div class="stat-label">Featured AI Projects</div>
+              <div class="stat-num">2</div>
+              <div class="stat-label">Featured Projects</div>
             </div>
             <div class="stat-card">
-              <div class="stat-num">3+</div>
-              <div class="stat-label">Industry Certifications</div>
+              <div class="stat-num">4</div>
+              <div class="stat-label">Credentials & Internships</div>
             </div>
             <div class="stat-card">
               <div class="stat-num">2028</div>
@@ -2033,9 +2119,10 @@ button, input, textarea {
 
             <div class="profile-tags">
               <span class="tag">Python</span>
-              <span class="tag">Gemini API</span>
-              <span class="tag">React.js</span>
+              <span class="tag">SQLite</span>
               <span class="tag">Scikit-learn</span>
+              <span class="tag">Pytest</span>
+              <span class="tag">React.js</span>
               <span class="tag">SQL</span>
             </div>
 
@@ -2081,32 +2168,32 @@ button, input, textarea {
               Artificial Intelligence and Machine Learning undergraduate with a strong academic standing (<strong>CGPA of 8.5/10</strong>), proficient in <strong>Python, machine learning, data preprocessing, and SQL</strong>. Experienced in designing and deploying AI-powered applications utilizing <strong>Scikit-learn, Streamlit, React, and Large Language Models (Gemini & OpenAI APIs)</strong>.
             </p>
             <p class="about-text mt-2">
-              Equipped with a solid foundation in <strong>Data Structures, Algorithms, and analytical problem-solving</strong>, with a keen interest in applying data science and intelligent systems to deliver scalable, user-centric engineering solutions.
+              Equipped with a solid foundation in <strong>Data Structures, Algorithms, and analytical problem-solving</strong>, with a keen interest in applying data science, compliance verification systems, and intelligent algorithms to deliver scalable, reliable engineering solutions.
             </p>
           </div>
 
           <div class="about-highlights">
             <div class="highlight-item glass-panel">
-              <div class="highlight-icon"><i class="fa-solid fa-brain"></i></div>
+              <div class="highlight-icon"><i class="fa-solid fa-shield-halved"></i></div>
               <div class="highlight-info">
-                <h4>Generative AI & LLM Systems</h4>
-                <p>Hands-on experience integrating Gemini 2.5 Flash, Vertex AI, and OpenAI APIs for autonomous triage and conversational voice assistants.</p>
+                <h4>Data Deletion Audit & Verification</h4>
+                <p>Engineered TRACE multi-format evidence scanner processing 94 files into 2,929 observations across 386 scopes in 0.52s with identity resolution, absence proofs, and OCR.</p>
               </div>
             </div>
 
             <div class="highlight-item glass-panel">
               <div class="highlight-icon"><i class="fa-solid fa-chart-line"></i></div>
               <div class="highlight-info">
-                <h4>Applied Machine Learning</h4>
-                <p>End-to-end data pipelines: preprocessing, TF-IDF vectorization, Cosine Similarity, recommendation algorithms, and interactive Streamlit UIs.</p>
+                <h4>Applied Machine Learning & NLP</h4>
+                <p>End-to-end data pipelines: preprocessing, TF-IDF vectorization, Cosine Similarity, content-based recommendation algorithms, and real-time Streamlit applications.</p>
               </div>
             </div>
 
             <div class="highlight-item glass-panel">
               <div class="highlight-icon"><i class="fa-solid fa-layer-group"></i></div>
               <div class="highlight-info">
-                <h4>Full Stack & Cloud Integration</h4>
-                <p>Developing reusable frontend components in React.js and Vite, connected to scalable RESTful Node/Express backends and Google Vertex AI.</p>
+                <h4>Full Stack & System Architecture</h4>
+                <p>Hands-on development with Python, SQLite, Pytest, React.js, and RESTful backends, backed by a proven track record in fast-paced internships and hackathons.</p>
               </div>
             </div>
           </div>
@@ -2120,7 +2207,7 @@ button, input, textarea {
         <div class="section-header">
           <span class="section-tag"><i class="fa-solid fa-code"></i> Technical Stack</span>
           <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
-          <p class="section-desc">A comprehensive toolkit spanning Artificial Intelligence, Software Engineering, and Data Science.</p>
+          <p class="section-desc">A comprehensive toolkit spanning Artificial Intelligence, Software Engineering, and Data Verification.</p>
         </div>
 
         <div class="skills-grid">
@@ -2158,18 +2245,21 @@ button, input, textarea {
             </div>
           </div>
 
-          <!-- Data Science & Libraries -->
+          <!-- Data Science, Audit & Systems -->
           <div class="skill-category glass-panel">
             <div class="category-header">
               <div class="category-icon icon-emerald"><i class="fa-solid fa-chart-column"></i></div>
-              <h3 class="category-title">Data Science & Libraries</h3>
+              <h3 class="category-title">Data Science & Systems</h3>
             </div>
             <div class="skill-badges">
+              <span class="skill-badge"><i class="fa-solid fa-database"></i> SQLite</span>
+              <span class="skill-badge"><i class="fa-solid fa-vial-circle-check"></i> Pytest</span>
+              <span class="skill-badge"><i class="fa-solid fa-eye"></i> OCR (Vision / PDF)</span>
+              <span class="skill-badge"><i class="fa-solid fa-file-lines"></i> Evidence Parsing</span>
               <span class="skill-badge"><i class="fa-solid fa-table"></i> Pandas</span>
               <span class="skill-badge"><i class="fa-solid fa-cubes"></i> NumPy</span>
               <span class="skill-badge"><i class="fa-solid fa-filter"></i> Data Preprocessing</span>
               <span class="skill-badge"><i class="fa-solid fa-wrench"></i> Feature Engineering</span>
-              <span class="skill-badge"><i class="fa-solid fa-magnifying-glass-chart"></i> Exploratory Data Analysis</span>
             </div>
           </div>
 
@@ -2189,7 +2279,7 @@ button, input, textarea {
             </div>
           </div>
 
-          <!-- Developer Tools & Cloud -->
+          <!-- Developer Tools & Platforms -->
           <div class="skill-category glass-panel">
             <div class="category-header">
               <div class="category-icon icon-amber"><i class="fa-solid fa-toolbox"></i></div>
@@ -2230,50 +2320,51 @@ button, input, textarea {
         <div class="section-header">
           <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Work & Innovation</span>
           <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
-          <p class="section-desc">Real-world AI and Machine Learning applications engineered with modern industry practices.</p>
+          <p class="section-desc">Real-world AI, Machine Learning, and verification systems engineered with modern industry practices.</p>
         </div>
 
         <div class="projects-grid">
-          <!-- Project 1 -->
+          <!-- Project 1: TRACE -->
           <div class="project-card glass-panel">
             <div class="project-header">
               <div class="project-type-badge">
-                <i class="fa-solid fa-brain"></i> Generative AI & Medical Triage
+                <i class="fa-solid fa-shield-halved"></i> Data Privacy & Compliance Audit
               </div>
               <div class="project-links">
-                <a href="https://github.com/shutupzunaira/voice-ai-agent" target="_blank" rel="noopener noreferrer" class="link-btn" title="View Source on GitHub">
-                  <i class="fa-brands fa-github"></i> Source Code
+                <a href="https://github.com/ushhhhhh" target="_blank" rel="noopener noreferrer" class="link-btn" title="View GitHub Profile">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="#trace-details" class="link-btn" onclick="openTraceModal(event)" title="View System Architecture">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Architecture Demo
                 </a>
               </div>
             </div>
 
-            <h3 class="project-title">Virtual Clinic – Autonomous Medical Voice Agent</h3>
+            <h3 class="project-title">TRACE – Customer Data Deletion Audit System</h3>
             <p class="project-description">
-              An AI-powered virtual healthcare assistant engineered to support voice- and text-based patient interactions with autonomous appointment scheduling and clinical triage assistance.
+              An automated compliance and verification system designed to validate and audit customer data deletion requests across distributed evidence sources with high-speed multi-format scanning and absence proofs.
             </p>
 
             <div class="project-highlights">
               <ul>
-                <li><strong>Multimodal Conversational AI:</strong> Integrated <em>Gemini 2.5 Flash, Vertex AI, and OpenAI APIs</em> to enable intelligent voice and text interactions with Web Speech API for seamless Speech-to-Text (STT) and Text-to-Speech (TTS).</li>
-                <li><strong>Autonomous Triage & Scheduling:</strong> Built automated logic to triage patient symptoms and handle medical appointment scheduling without human intervention.</li>
-                <li><strong>Full-Stack Architecture:</strong> Developed reusable components in React.js & Vite, backed by robust RESTful APIs built on Node.js and Express.js.</li>
-                <li><strong>Team Collaboration:</strong> Collaborated within a four-member engineering team using Git and GitHub branching workflows for agile feature delivery.</li>
+                <li><strong>High-Speed Multi-Format Scanning:</strong> Processed <strong>94 evidence files into 2,929 normalized observations</strong> across 386 snapshot scopes in <strong>0.52 seconds</strong> by developing a multi-format evidence scanner supporting JSON, SQL, LOG, TXT, PDF, and PNG (OCR).</li>
+                <li><strong>Scale & Verification:</strong> Evaluated <strong>518 customer deletion requests across 3,117 audit steps</strong> by integrating identity resolution, historical identifier matching, evidence discovery, and deletion-rule evaluation.</li>
+                <li><strong>Absence Proofs & Distributed Indexing:</strong> Implemented audit-time filtering, replica-aware indexing, resource-ID lookup, and absence proofs to identify historical and residual customer data across distributed evidence sources.</li>
+                <li><strong>Audit-Ready Compliance:</strong> Generated explainable, audit-ready results with evidence-backed findings, remediation actions, and verification steps to support reliable deletion compliance checks.</li>
               </ul>
             </div>
 
             <div class="project-tech-stack">
-              <span class="stack-tag">React.js</span>
-              <span class="stack-tag">Vite</span>
-              <span class="stack-tag">Node.js</span>
-              <span class="stack-tag">Express.js</span>
-              <span class="stack-tag">Gemini 2.5 Flash</span>
-              <span class="stack-tag">Google Vertex AI</span>
-              <span class="stack-tag">OpenAI API</span>
-              <span class="stack-tag">Web Speech API</span>
+              <span class="stack-tag">Python</span>
+              <span class="stack-tag">SQLite</span>
+              <span class="stack-tag">Pytest</span>
+              <span class="stack-tag">Evidence Parsing</span>
+              <span class="stack-tag">OCR</span>
+              <span class="stack-tag">Git</span>
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project 2: Movie Recommendation System -->
           <div class="project-card glass-panel">
             <div class="project-header">
               <div class="project-type-badge">
@@ -2281,7 +2372,7 @@ button, input, textarea {
               </div>
               <div class="project-links">
                 <a href="https://github.com/ushhhhhh/movie" target="_blank" rel="noopener noreferrer" class="link-btn" title="View Source on GitHub">
-                  <i class="fa-brands fa-github"></i> Source Code
+                  <i class="fa-brands fa-github"></i> GitHub
                 </a>
               </div>
             </div>
@@ -2293,10 +2384,10 @@ button, input, textarea {
 
             <div class="project-highlights">
               <ul>
-                <li><strong>Feature Engineering & Preprocessing:</strong> Cleaned and engineered features across large movie datasets using <em>Python, Pandas, and NumPy</em> to produce high-fidelity model vectors.</li>
-                <li><strong>Vector Space & NLP:</strong> Implemented <em>TF-IDF Vectorization</em> and mathematical <em>Cosine Similarity</em> to quantify semantic proximity between film attributes (genres, cast, synopsis).</li>
-                <li><strong>Interactive Web App:</strong> Built an intuitive, rapid-response user interface using <em>Streamlit</em> for real-time search, ranking, and display.</li>
-                <li><strong>Performance Tuning:</strong> Optimized data caching and similarity matrix calculations to achieve minimal latency during real-time user queries.</li>
+                <li><strong>Vector Space & Similarity:</strong> Developed a content-based movie recommendation system using <strong>TF-IDF vectorization and Cosine Similarity</strong> to identify movies with similar content and generate personalized recommendations.</li>
+                <li><strong>Data Cleaning & Feature Engineering:</strong> Performed data cleaning, preprocessing, and feature engineering using <strong>Pandas and NumPy</strong> to prepare movie information for similarity-based recommendations.</li>
+                <li><strong>Interactive Web App:</strong> Implemented an interactive <strong>Streamlit application</strong> that enables users to search for movies and receive recommendations through a simple, user-friendly interface.</li>
+                <li><strong>Real-Time Pipeline:</strong> Integrated the recommendation logic with the application to provide real-time movie search and recommendation results.</li>
               </ul>
             </div>
 
@@ -2314,7 +2405,7 @@ button, input, textarea {
       </div>
     </section>
 
-    <!-- EDUCATION & CERTIFICATIONS SECTION -->
+    <!-- EDUCATION & CERTIFICATIONS / INTERNSHIP SECTION -->
     <section class="section edu-cert-section" id="education">
       <div class="container">
         <div class="two-col-grid">
@@ -2364,14 +2455,28 @@ button, input, textarea {
             </div>
           </div>
 
-          <!-- Certifications Column -->
+          <!-- Certifications & Internship Column -->
           <div class="cert-column" id="certifications">
             <div class="section-header align-left">
-              <span class="section-tag"><i class="fa-solid fa-certificate"></i> Credentials</span>
-              <h2 class="section-title">Certifications</h2>
+              <span class="section-tag"><i class="fa-solid fa-certificate"></i> Experience & Credentials</span>
+              <h2 class="section-title">Certifications & Internship</h2>
             </div>
 
             <div class="certifications-list">
+              <!-- Internship -->
+              <div class="cert-card glass-panel" style="border-left: 3px solid var(--accent-cyan);">
+                <div class="cert-icon icon-cyan"><i class="fa-solid fa-briefcase"></i></div>
+                <div class="cert-details">
+                  <div class="cert-top">
+                    <h3 class="cert-name">Web Development Internship</h3>
+                    <span class="cert-year">Oct 2026</span>
+                  </div>
+                  <p class="cert-issuer">InAmigos Foundation (10 Oct 2026 – 26 Oct 2026)</p>
+                  <p class="cert-summary">Engaged in full-stack web engineering, building responsive, accessible web solutions, UI/UX optimization, and deployment workflows.</p>
+                  <span class="cert-verified"><i class="fa-solid fa-circle-check"></i> Verified Internship</span>
+                </div>
+              </div>
+
               <!-- Cert 1 -->
               <div class="cert-card glass-panel">
                 <div class="cert-icon icon-purple"><i class="fa-solid fa-gears"></i></div>
@@ -2426,7 +2531,7 @@ button, input, textarea {
         <div class="section-header">
           <span class="section-tag"><i class="fa-solid fa-envelope"></i> Reach Out</span>
           <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
-          <p class="section-desc">Open for internships, collaborative AI projects, and research opportunities.</p>
+          <p class="section-desc">Open for internships, collaborative AI/ML projects, and research opportunities.</p>
         </div>
 
         <div class="contact-wrapper glass-panel">
@@ -2511,6 +2616,83 @@ button, input, textarea {
     </section>
   </main>
 
+  <!-- TRACE ARCHITECTURE & LIVE DEMO MODAL -->
+  <div class="ai-modal-overlay" id="trace-modal-overlay">
+    <div class="trace-modal glass-panel">
+      <div class="ai-modal-header">
+        <div class="ai-modal-title">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h4>TRACE – System Architecture & Demo Overview</h4>
+            <span class="ai-status">Customer Data Deletion Audit Verification</span>
+          </div>
+        </div>
+        <button class="ai-close-btn" id="trace-close-btn" aria-label="Close Modal">&times;</button>
+      </div>
+
+      <div class="trace-modal-body">
+        <p style="color:var(--text-secondary); margin-bottom: 1rem;">
+          <strong>TRACE</strong> is an automated end-to-end compliance auditing system built to rigorously verify that customer data has been thoroughly purged across distributed enterprise data stores.
+        </p>
+
+        <div class="arch-metrics-grid">
+          <div class="arch-metric-card">
+            <div class="arch-metric-val">0.52s</div>
+            <div class="arch-metric-label">Scan Latency</div>
+          </div>
+          <div class="arch-metric-card">
+            <div class="arch-metric-val">2,929</div>
+            <div class="arch-metric-label">Observations (94 files)</div>
+          </div>
+          <div class="arch-metric-card">
+            <div class="arch-metric-val">3,117</div>
+            <div class="arch-metric-label">Audit Steps Evaluated</div>
+          </div>
+        </div>
+
+        <div class="arch-step-list">
+          <div class="arch-step-item">
+            <div class="arch-step-num">1</div>
+            <div>
+              <h5 style="font-weight:700; margin-bottom:0.25rem;">Multi-Format Evidence Ingestion</h5>
+              <p style="font-size:0.88rem; color:var(--text-secondary);">High-throughput scanner parsing JSON, SQL dumps, raw LOG files, TXT, PDF documents, and PNG image receipts via OCR into normalized observation schemas.</p>
+            </div>
+          </div>
+
+          <div class="arch-step-item">
+            <div class="arch-step-num">2</div>
+            <div>
+              <h5 style="font-weight:700; margin-bottom:0.25rem;">Identity Resolution & Identifier Matching</h5>
+              <p style="font-size:0.88rem; color:var(--text-secondary);">Links historical aliases, email variations, and resource IDs to reconstruct the complete identity footprint across 386 snapshot scopes.</p>
+            </div>
+          </div>
+
+          <div class="arch-step-item">
+            <div class="arch-step-num">3</div>
+            <div>
+              <h5 style="font-weight:700; margin-bottom:0.25rem;">Absence Proofs & Replica Verification</h5>
+              <p style="font-size:0.88rem; color:var(--text-secondary);">Applies replica-aware indexing and absence proofs to prove non-existence of customer data while flagging lingering un-purged records.</p>
+            </div>
+          </div>
+
+          <div class="arch-step-item">
+            <div class="arch-step-num">4</div>
+            <div>
+              <h5 style="font-weight:700; margin-bottom:0.25rem;">Explainable Compliance Reporting</h5>
+              <p style="font-size:0.88rem; color:var(--text-secondary);">Produces audit-ready certification summaries, verifiable remediation actions, and test suites validated with Pytest.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: right; margin-top: 1rem;">
+          <a href="https://github.com/ushhhhhh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <i class="fa-brands fa-github"></i> View GitHub Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- AI ASSISTANT MODAL (Interactive AI Agent Feature) -->
   <div class="ai-modal-overlay" id="ai-modal-overlay">
     <div class="ai-modal glass-panel">
@@ -2529,7 +2711,7 @@ button, input, textarea {
         <div class="chat-message bot-message">
           <div class="message-avatar"><i class="fa-solid fa-robot"></i></div>
           <div class="message-content">
-            Hello! I am Usha's AI Profile Assistant. Ask me anything about her skills, projects, educational background at BMSITM, or contact information!
+            Hello! I am Usha's AI Profile Assistant. Ask me anything about her skills, projects (such as TRACE and Movie Recommender), education at BMSITM, InAmigos internship, or contact information!
           </div>
         </div>
       </div>
@@ -2537,8 +2719,10 @@ button, input, textarea {
       <!-- Quick prompts -->
       <div class="quick-prompts">
         <button class="quick-chip" onclick="askQuickPrompt('What are Usha\'s top technical skills?')">Top Skills?</button>
-        <button class="quick-chip" onclick="askQuickPrompt('Tell me about the Virtual Clinic project.')">Virtual Clinic Project?</button>
+        <button class="quick-chip" onclick="askQuickPrompt('Tell me about the TRACE project.')">TRACE Project?</button>
+        <button class="quick-chip" onclick="askQuickPrompt('Tell me about the Movie Recommendation System.')">Movie Recommender?</button>
         <button class="quick-chip" onclick="askQuickPrompt('What is Usha\'s education and CGPA?')">Education & CGPA?</button>
+        <button class="quick-chip" onclick="askQuickPrompt('Tell me about her InAmigos internship and certifications.')">Internship & Certs?</button>
         <button class="quick-chip" onclick="askQuickPrompt('How can I contact Usha for an internship?')">Contact Details?</button>
       </div>
 
@@ -2564,6 +2748,7 @@ button, input, textarea {
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#education">Education</a>
+          <a href="#certifications">Experience & Certs</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -2669,7 +2854,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // TRACE Architecture Demo Modal Close
+  const traceModalOverlay = document.getElementById('trace-modal-overlay');
+  const traceCloseBtn = document.getElementById('trace-close-btn');
+  if (traceCloseBtn && traceModalOverlay) {
+    traceCloseBtn.addEventListener('click', () => {
+      traceModalOverlay.classList.remove('active');
+    });
+  }
+  if (traceModalOverlay) {
+    traceModalOverlay.addEventListener('click', (e) => {
+      if (e.target === traceModalOverlay) {
+        traceModalOverlay.classList.remove('active');
+      }
+    });
+  }
+
 });
+
+// Open TRACE Project Architecture Demo Modal
+function openTraceModal(e) {
+  if (e) e.preventDefault();
+  const traceModalOverlay = document.getElementById('trace-modal-overlay');
+  if (traceModalOverlay) {
+    traceModalOverlay.classList.add('active');
+  }
+}
 
 // 5. COPY CONTACT DETAILS
 function copyContactInfo() {
@@ -2720,33 +2930,37 @@ function handleFormSubmit(e) {
 const RESUME_KNOWLEDGE = {
   skills: `Usha's core technical toolkit includes:
 • <strong>Languages:</strong> Python, JavaScript (ES6+), SQL, HTML5, CSS3, C.
-• <strong>AI & Machine Learning:</strong> Gemini 2.5 Flash, Vertex AI, OpenAI APIs, Scikit-learn, Prompt Engineering, Streamlit, Cosine Similarity, TF-IDF.
-• <strong>Data Science:</strong> Pandas, NumPy, Data Preprocessing, Feature Engineering.
-• <strong>Web & Backend:</strong> React.js, Vite, Node.js, Express.js, Web Speech API, MySQL.
-• <strong>Core Fundamentals:</strong> DSA, DBMS, OOP, Operating Systems, Computer Networks.`,
+• <strong>AI, Machine Learning & Systems:</strong> Scikit-learn, Streamlit, Cosine Similarity, TF-IDF Vectorization, Gemini 2.5 Flash, Vertex AI, OpenAI APIs, Prompt Engineering.
+• <strong>Data Science & Verification:</strong> SQLite, Pytest, Evidence Parsing, OCR (Vision/PDF), Pandas, NumPy, Data Preprocessing, Feature Engineering.
+• <strong>Web & Backend:</strong> React.js, Vite, Node.js, Express.js, MySQL, RESTful APIs.
+• <strong>Core Fundamentals:</strong> DSA, DBMS, OOP, Operating Systems, Computer Networks, Linear Algebra & Probability.`,
 
   projects: `Usha has developed two major featured projects:
-1. <strong>Virtual Clinic – Autonomous Medical Voice Agent:</strong>
-   • Voice & text conversational healthcare assistant with autonomous appointment scheduling.
-   • Stack: Gemini 2.5 Flash, Vertex AI, OpenAI API, Web Speech API, React.js, Vite, Node.js, Express.js.
-   • GitHub: <a href="https://github.com/shutupzunaira/voice-ai-agent" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">shutupzunaira/voice-ai-agent</a>
+1. <strong>TRACE – Customer Data Deletion Audit System:</strong>
+   • Automated compliance and deletion verification system for distributed data evidence.
+   • Processed 94 evidence files into 2,929 normalized observations across 386 snapshot scopes in 0.52s (JSON, SQL, LOG, TXT, PDF, PNG/OCR).
+   • Evaluated 518 customer deletion requests across 3,117 audit steps with identity resolution and absence proofs.
+   • Stack: Python, SQLite, Pytest, Evidence Parsing, OCR, Git.
+   • GitHub: <a href="https://github.com/ushhhhhh" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">github.com/ushhhhhh</a>
 
 2. <strong>Movie Recommendation System:</strong>
    • Content-based recommendation engine using TF-IDF vectorization and Cosine Similarity on film metadata.
-   • Stack: Python, Scikit-learn, Pandas, NumPy, Streamlit.
-   • GitHub: <a href="https://github.com/ushhhhhh/movie" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">ushhhhhh/movie</a>`,
+   • Built an interactive Streamlit UI for real-time film search, ranking, and recommendations.
+   • Stack: Python, Pandas, NumPy, Scikit-learn, Streamlit.
+   • GitHub: <a href="https://github.com/ushhhhhh/movie" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">github.com/ushhhhhh/movie</a>`,
 
   education: `<strong>Education Details:</strong>
 • <strong>Degree:</strong> Bachelor of Engineering (B.E.) in Artificial Intelligence and Machine Learning
 • <strong>Institution:</strong> BMS Institute of Technology and Management, Bengaluru
 • <strong>Graduation:</strong> Expected in 2028
 • <strong>Academic CGPA:</strong> <strong>8.50 / 10.00</strong>
-• <strong>Key Coursework:</strong> Data Structures & Algorithms, Machine Learning, Artificial Intelligence, DBMS, Linear Algebra, Probability & Statistics.`,
+• <strong>Key Coursework:</strong> Data Structures and Algorithms, Machine Learning, Artificial Intelligence, Database Management Systems, Probability & Statistics, Linear Algebra.`,
 
-  certifications: `<strong>Industry Certifications:</strong>
-1. <strong>Workato Foundations Level 1</strong> – Workato Automation Institute (2025)
-2. <strong>Cyber Security & Applied Ethical Hacking</strong> – Infosys Springboard (2025)
-3. <strong>Programming in C</strong> – Infosys Springboard (2024)`,
+  certifications: `<strong>Internships & Certifications:</strong>
+1. <strong>Web Development Internship</strong> – InAmigos Foundation (10 Oct 2026 – 26 Oct 2026)
+2. <strong>Workato Foundations Level 1</strong> – Workato Automation Institute (2025)
+3. <strong>Cyber Security & Applied Ethical Hacking</strong> – Infosys Springboard (2025)
+4. <strong>Programming in C</strong> – Infosys Springboard (2024)`,
 
   contact: `<strong>Contact Usha Prakash:</strong>
 • <strong>Email:</strong> <a href="mailto:prakashusha291@gmail.com" style="color:var(--accent-cyan);">prakashusha291@gmail.com</a>
@@ -2759,30 +2973,34 @@ const RESUME_KNOWLEDGE = {
 function generateAiResponse(input) {
   const query = input.toLowerCase();
 
-  if (query.includes('skill') || query.includes('tech') || query.includes('language') || query.includes('python') || query.includes('react')) {
+  if (query.includes('skill') || query.includes('tech') || query.includes('language') || query.includes('python') || query.includes('sqlite') || query.includes('pytest') || query.includes('ocr')) {
     return RESUME_KNOWLEDGE.skills;
   }
-  if (query.includes('project') || query.includes('virtual clinic') || query.includes('movie') || query.includes('work') || query.includes('agent')) {
+  if (query.includes('trace') || query.includes('audit') || query.includes('deletion') || query.includes('evidence')) {
+    return RESUME_KNOWLEDGE.projects;
+  }
+  if (query.includes('project') || query.includes('movie') || query.includes('work') || query.includes('system')) {
     return RESUME_KNOWLEDGE.projects;
   }
   if (query.includes('education') || query.includes('college') || query.includes('bms') || query.includes('cgpa') || query.includes('degree') || query.includes('gpa')) {
     return RESUME_KNOWLEDGE.education;
   }
-  if (query.includes('certif') || query.includes('workato') || query.includes('infosys') || query.includes('course')) {
+  if (query.includes('certif') || query.includes('intern') || query.includes('inamigos') || query.includes('workato') || query.includes('infosys') || query.includes('course')) {
     return RESUME_KNOWLEDGE.certifications;
   }
-  if (query.includes('contact') || query.includes('email') || query.includes('phone') || query.includes('reach') || query.includes('hire') || query.includes('intern')) {
+  if (query.includes('contact') || query.includes('email') || query.includes('phone') || query.includes('reach') || query.includes('hire')) {
     return RESUME_KNOWLEDGE.contact;
   }
   if (query.includes('who') || query.includes('about') || query.includes('summary') || query.includes('intro')) {
-    return `<strong>Usha Prakash</strong> is an Artificial Intelligence & Machine Learning undergraduate at BMS Institute of Technology and Management (CGPA: 8.5/10). She specializes in building intelligent applications using Python, Scikit-learn, React, and LLMs such as Gemini and OpenAI APIs. She is passionate about solving real-world challenges through AI and software engineering.`;
+    return `<strong>Usha Prakash</strong> is an Artificial Intelligence & Machine Learning undergraduate at BMS Institute of Technology and Management (CGPA: 8.5/10). She specializes in building intelligent applications and high-performance verification systems using Python, Scikit-learn, React, Streamlit, and modern AI/LLMs. Her recent work includes the TRACE Customer Data Deletion Audit System and a Content-Based Movie Recommendation Engine.`;
   }
 
   return `I can help you with details about Usha Prakash! Try asking about:
-• <em>Technical skills & tools</em>
-• <em>Virtual Clinic or Movie Recommendation projects</em>
+• <em>Technical skills & tools (Python, SQLite, Pytest, Scikit-learn)</em>
+• <em>TRACE Customer Data Deletion Audit System</em>
+• <em>Movie Recommendation System</em>
+• <em>InAmigos Internship & Certifications</em>
 • <em>Education at BMSITM & CGPA</em>
-• <em>Industry Certifications</em>
 • <em>Contact info & internship inquiries</em>`;
 }
 

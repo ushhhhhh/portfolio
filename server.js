@@ -36,7 +36,6 @@ function getAllNetworkIps() {
 }
 
 const server = http.createServer((req, res) => {
-  // CORS & headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', '*');
@@ -91,7 +90,5 @@ server.listen(PORT, '0.0.0.0', () => {
   ips.forEach(i => {
     console.log(`   • [${i.name}] -> http://${i.address}:${PORT}`);
   });
-  console.log('----------------------------------------------------------------');
-  console.log('Ensure your phone is connected to the same Wi-Fi network.');
   console.log('================================================================');
 });
