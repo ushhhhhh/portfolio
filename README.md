@@ -13,7 +13,7 @@ The website highlights:
 - **Comprehensive Skills Matrix:** Python, Scikit-learn, React.js, SQLite, Pytest, OCR, Gemini 2.5 Flash, Vertex AI, SQL, and core CS fundamentals.
 - **Featured Projects:**
   1. *TRACE – Customer Data Deletion Audit System* (Python, SQLite, Pytest, Evidence Parsing, OCR, Git)
-  2. *Movie Recommendation System* (Python, Scikit-learn, Streamlit, Cosine Similarity, TF-IDF)
+  2. *CineMatch – AI-Powered Movie Recommendation System* (Python, Pandas, NumPy, Scikit-learn, Streamlit)
 - **Education & Credentials:** BMSITM (CGPA: 8.5/10), InAmigos Foundation Web Development Internship, Workato Foundations Level 1, Infosys Springboard Ethical Hacking & C.
 - **Contact Details & Interactive Form:** Direct email, phone, location, LinkedIn, and GitHub links.
 - **Print / PDF Resume Generator:** Built-in `@media print` engine to export a clean, executive resume PDF.

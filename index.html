@@ -2364,7 +2364,7 @@ button, input, textarea {
             </div>
           </div>
 
-          <!-- Project 2: Movie Recommendation System -->
+          <!-- Project 2: CineMatch -->
           <div class="project-card glass-panel">
             <div class="project-header">
               <div class="project-type-badge">
@@ -2377,25 +2377,25 @@ button, input, textarea {
               </div>
             </div>
 
-            <h3 class="project-title">Movie Recommendation System</h3>
+            <h3 class="project-title">CineMatch – AI-Powered Movie Recommendation System</h3>
             <p class="project-description">
-              A high-performance content-based movie recommendation platform that predicts and serves personalized film suggestions based on metadata similarities in real-time.
+              An intelligent content-based movie recommendation engine built on IMDb datasets featuring genre-wise exploration, personalized similarity matching, and real-time Streamlit delivery.
             </p>
 
             <div class="project-highlights">
               <ul>
-                <li><strong>Vector Space & Similarity:</strong> Developed a content-based movie recommendation system using <strong>TF-IDF vectorization and Cosine Similarity</strong> to identify movies with similar content and generate personalized recommendations.</li>
-                <li><strong>Data Cleaning & Feature Engineering:</strong> Performed data cleaning, preprocessing, and feature engineering using <strong>Pandas and NumPy</strong> to prepare movie information for similarity-based recommendations.</li>
-                <li><strong>Interactive Web App:</strong> Implemented an interactive <strong>Streamlit application</strong> that enables users to search for movies and receive recommendations through a simple, user-friendly interface.</li>
-                <li><strong>Real-Time Pipeline:</strong> Integrated the recommendation logic with the application to provide real-time movie search and recommendation results.</li>
+                <li><strong>Content-Based Recommendation Engine:</strong> Developed a content-based movie recommendation engine using <strong>TF-IDF vectorization and Cosine Similarity</strong> to identify movies with similar genre-based content.</li>
+                <li><strong>IMDb Feature Engineering:</strong> Performed data preprocessing, cleaning, filtering, and feature engineering on <strong>IMDb datasets</strong> using <strong>Pandas and NumPy</strong> to prepare movie metadata for similarity-based recommendations.</li>
+                <li><strong>Interactive Exploration & Search:</strong> Built an interactive <strong>Streamlit application</strong> featuring movie search, personalized similarity-based recommendations, and <strong>genre-wise movie exploration with IMDb ratings</strong>.</li>
+                <li><strong>Performance Optimization:</strong> Implemented <strong>cached data loading and similarity computation</strong> using Streamlit and Scikit-learn to improve application efficiency and deliver faster recommendation results.</li>
               </ul>
             </div>
 
             <div class="project-tech-stack">
               <span class="stack-tag">Python</span>
-              <span class="stack-tag">Scikit-learn</span>
               <span class="stack-tag">Pandas</span>
               <span class="stack-tag">NumPy</span>
+              <span class="stack-tag">Scikit-learn</span>
               <span class="stack-tag">Streamlit</span>
               <span class="stack-tag">TF-IDF</span>
               <span class="stack-tag">Cosine Similarity</span>
@@ -2720,7 +2720,7 @@ button, input, textarea {
       <div class="quick-prompts">
         <button class="quick-chip" onclick="askQuickPrompt('What are Usha\'s top technical skills?')">Top Skills?</button>
         <button class="quick-chip" onclick="askQuickPrompt('Tell me about the TRACE project.')">TRACE Project?</button>
-        <button class="quick-chip" onclick="askQuickPrompt('Tell me about the Movie Recommendation System.')">Movie Recommender?</button>
+        <button class="quick-chip" onclick="askQuickPrompt('Tell me about CineMatch.')">CineMatch?</button>
         <button class="quick-chip" onclick="askQuickPrompt('What is Usha\'s education and CGPA?')">Education & CGPA?</button>
         <button class="quick-chip" onclick="askQuickPrompt('Tell me about her InAmigos internship and certifications.')">Internship & Certs?</button>
         <button class="quick-chip" onclick="askQuickPrompt('How can I contact Usha for an internship?')">Contact Details?</button>
@@ -2943,9 +2943,10 @@ const RESUME_KNOWLEDGE = {
    • Stack: Python, SQLite, Pytest, Evidence Parsing, OCR, Git.
    • GitHub: <a href="https://github.com/ushhhhhh" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">github.com/ushhhhhh</a>
 
-2. <strong>Movie Recommendation System:</strong>
-   • Content-based recommendation engine using TF-IDF vectorization and Cosine Similarity on film metadata.
-   • Built an interactive Streamlit UI for real-time film search, ranking, and recommendations.
+2. <strong>CineMatch – AI-Powered Movie Recommendation System:</strong>
+   • Content-based recommendation engine built on IMDb datasets using TF-IDF vectorization and Cosine Similarity.
+   • Features interactive Streamlit web app with movie search, personalized similarity-based recommendations, and genre-wise movie exploration with IMDb ratings.
+   • Implemented cached data loading and similarity computation using Streamlit and Scikit-learn to optimize efficiency.
    • Stack: Python, Pandas, NumPy, Scikit-learn, Streamlit.
    • GitHub: <a href="https://github.com/ushhhhhh/movie" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">github.com/ushhhhhh/movie</a>`,
 
@@ -2979,7 +2980,10 @@ function generateAiResponse(input) {
   if (query.includes('trace') || query.includes('audit') || query.includes('deletion') || query.includes('evidence')) {
     return RESUME_KNOWLEDGE.projects;
   }
-  if (query.includes('project') || query.includes('movie') || query.includes('work') || query.includes('system')) {
+  if (query.includes('cinematch') || query.includes('movie') || query.includes('recommend') || query.includes('imdb')) {
+    return RESUME_KNOWLEDGE.projects;
+  }
+  if (query.includes('project') || query.includes('work') || query.includes('system')) {
     return RESUME_KNOWLEDGE.projects;
   }
   if (query.includes('education') || query.includes('college') || query.includes('bms') || query.includes('cgpa') || query.includes('degree') || query.includes('gpa')) {
@@ -2992,13 +2996,13 @@ function generateAiResponse(input) {
     return RESUME_KNOWLEDGE.contact;
   }
   if (query.includes('who') || query.includes('about') || query.includes('summary') || query.includes('intro')) {
-    return `<strong>Usha Prakash</strong> is an Artificial Intelligence & Machine Learning undergraduate at BMS Institute of Technology and Management (CGPA: 8.5/10). She specializes in building intelligent applications and high-performance verification systems using Python, Scikit-learn, React, Streamlit, and modern AI/LLMs. Her recent work includes the TRACE Customer Data Deletion Audit System and a Content-Based Movie Recommendation Engine.`;
+    return `<strong>Usha Prakash</strong> is an Artificial Intelligence & Machine Learning undergraduate at BMS Institute of Technology and Management (CGPA: 8.5/10). She specializes in building intelligent applications and high-performance verification systems using Python, Scikit-learn, React, Streamlit, and modern AI/LLMs. Her recent work includes the TRACE Customer Data Deletion Audit System and CineMatch – AI-Powered Movie Recommendation System.`;
   }
 
   return `I can help you with details about Usha Prakash! Try asking about:
 • <em>Technical skills & tools (Python, SQLite, Pytest, Scikit-learn)</em>
 • <em>TRACE Customer Data Deletion Audit System</em>
-• <em>Movie Recommendation System</em>
+• <em>CineMatch – AI-Powered Movie Recommendation System</em>
 • <em>InAmigos Internship & Certifications</em>
 • <em>Education at BMSITM & CGPA</em>
 • <em>Contact info & internship inquiries</em>`;

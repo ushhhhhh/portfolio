@@ -180,9 +180,10 @@ const RESUME_KNOWLEDGE = {
    • Stack: Python, SQLite, Pytest, Evidence Parsing, OCR, Git.
    • GitHub: <a href="https://github.com/ushhhhhh" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">github.com/ushhhhhh</a>
 
-2. <strong>Movie Recommendation System:</strong>
-   • Content-based recommendation engine using TF-IDF vectorization and Cosine Similarity on film metadata.
-   • Built an interactive Streamlit UI for real-time film search, ranking, and recommendations.
+2. <strong>CineMatch – AI-Powered Movie Recommendation System:</strong>
+   • Content-based recommendation engine built on IMDb datasets using TF-IDF vectorization and Cosine Similarity.
+   • Features interactive Streamlit web app with movie search, personalized similarity-based recommendations, and genre-wise movie exploration with IMDb ratings.
+   • Implemented cached data loading and similarity computation using Streamlit and Scikit-learn to optimize efficiency.
    • Stack: Python, Pandas, NumPy, Scikit-learn, Streamlit.
    • GitHub: <a href="https://github.com/ushhhhhh/movie" target="_blank" style="color:var(--accent-cyan); text-decoration:underline;">github.com/ushhhhhh/movie</a>`,
 
@@ -216,7 +217,10 @@ function generateAiResponse(input) {
   if (query.includes('trace') || query.includes('audit') || query.includes('deletion') || query.includes('evidence')) {
     return RESUME_KNOWLEDGE.projects;
   }
-  if (query.includes('project') || query.includes('movie') || query.includes('work') || query.includes('system')) {
+  if (query.includes('cinematch') || query.includes('movie') || query.includes('recommend') || query.includes('imdb')) {
+    return RESUME_KNOWLEDGE.projects;
+  }
+  if (query.includes('project') || query.includes('work') || query.includes('system')) {
     return RESUME_KNOWLEDGE.projects;
   }
   if (query.includes('education') || query.includes('college') || query.includes('bms') || query.includes('cgpa') || query.includes('degree') || query.includes('gpa')) {
@@ -229,13 +233,13 @@ function generateAiResponse(input) {
     return RESUME_KNOWLEDGE.contact;
   }
   if (query.includes('who') || query.includes('about') || query.includes('summary') || query.includes('intro')) {
-    return `<strong>Usha Prakash</strong> is an Artificial Intelligence & Machine Learning undergraduate at BMS Institute of Technology and Management (CGPA: 8.5/10). She specializes in building intelligent applications and high-performance verification systems using Python, Scikit-learn, React, Streamlit, and modern AI/LLMs. Her recent work includes the TRACE Customer Data Deletion Audit System and a Content-Based Movie Recommendation Engine.`;
+    return `<strong>Usha Prakash</strong> is an Artificial Intelligence & Machine Learning undergraduate at BMS Institute of Technology and Management (CGPA: 8.5/10). She specializes in building intelligent applications and high-performance verification systems using Python, Scikit-learn, React, Streamlit, and modern AI/LLMs. Her recent work includes the TRACE Customer Data Deletion Audit System and CineMatch – AI-Powered Movie Recommendation System.`;
   }
 
   return `I can help you with details about Usha Prakash! Try asking about:
 • <em>Technical skills & tools (Python, SQLite, Pytest, Scikit-learn)</em>
 • <em>TRACE Customer Data Deletion Audit System</em>
-• <em>Movie Recommendation System</em>
+• <em>CineMatch – AI-Powered Movie Recommendation System</em>
 • <em>InAmigos Internship & Certifications</em>
 • <em>Education at BMSITM & CGPA</em>
 • <em>Contact info & internship inquiries</em>`;
